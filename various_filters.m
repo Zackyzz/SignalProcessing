@@ -1,3 +1,6 @@
+% This script applies filters such as: low-pass, band-pass, high-pass and band-stop
+% to some various generated sinusoids.
+
 clc
 clear all
 close all
@@ -5,9 +8,9 @@ close all
 F1=200; F2=700; F3=1200;
 A=1; durata=1; Fs=10000;
 
-[t1,s1]=sinusoida(A,F1,Fs,durata,0);
-[t2,s2]=sinusoida(A,F2,Fs,durata,0);
-[t3,s3]=sinusoida(A,F3,Fs,durata,0);
+[t1,s1]=sinusoid(A,F1,Fs,durata,0);
+[t2,s2]=sinusoid(A,F2,Fs,durata,0);
+[t3,s3]=sinusoid(A,F3,Fs,durata,0);
 summ=s1+s2+s3;
 
 X1=abs(fftshift(fft(summ)));

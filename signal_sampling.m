@@ -1,3 +1,6 @@
+% This script generates and visualizes different signals (sine, sawtooth, square)
+% Then plots the effects of different sampling frequencies on those signals.
+
 clc
 clear all
 close all

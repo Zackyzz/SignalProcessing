@@ -1,3 +1,6 @@
+% This generates a sinusoidal signal and computes its Fast Fourier Transform.
+% It also plots the signal in time domain and its frequency spectrum using the stem plot.
+
 clc
 clear all
 close all

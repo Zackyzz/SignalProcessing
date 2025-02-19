@@ -1,20 +1,24 @@
+% This script generates a sinusoidal signal and adds some random noise to it.
+% The noisy signal is then filtered using a moving average filter.
+% The signals are visualized in time and frequency domains.
+
 clc
 clear all
 close all
 
-A=10; F=2; Fs=200; durata=2;
-[t,s]=sinusoida(A,F,Fs,durata,0);
+A=10; F=2; Fs=200; duration=2;
+[t,s]=sinusoid(A,F,Fs,duration,0);
 
 figure(1);
 plot(t,s);
-grid, axis([0,durata,-A-1,A+1]);
+grid, axis([0,duration,-A-1,A+1]);
 title("Sinudoida dinaintea convolutiei");
 
-zgomot=rand(1,Fs*durata+1)*2-1;
+zgomot=rand(1,Fs*duration+1)*2-1;
 figure(2);
 plot(t,zgomot);
 title("Niste zgomot");
-axis([0,durata,-1.25,1.25]);
+axis([0,duration,-1.25,1.25]);
 
 summ=s+zgomot;
 figure(3);
@@ -23,7 +27,7 @@ hold on
     plot(t,s,"b");
     plot(t,summ,"r");
     plot(t,zgomot,"m");
-    axis([0,durata,-A-2,A+2]);
+    axis([0,duration,-A-2,A+2]);
     grid, title("Papalasca");
     
 hold off
@@ -31,20 +35,20 @@ hold off
 h=ones(1,10)/10;
 convolutie=conv(summ,h);
 newt=0:1/Fs:(length(convolutie)-1)/Fs;
-% newt=0:durata/(length(convolutie)-1):durata;
-% newt=linspace(0,durata,length(convolutie));
+% newt=0:duration/(length(convolutie)-1):duration;
+% newt=linspace(0,duration,length(convolutie));
 figure(4);
 
 hold on
 
     subplot(2,1,1);
     plot(t,summ,"r");
-    axis([0,durata,-A-2,A+2]);
+    axis([0,duration,-A-2,A+2]);
     grid, title("Sinusoida zgomotoasa");
     
     subplot(2,1,2);
     plot(newt,convolutie,"b");
-    axis([0,durata,-A-2,A+2]);
+    axis([0,duration,-A-2,A+2]);
     grid, title("Semnalul filtrat");
 
 hold off

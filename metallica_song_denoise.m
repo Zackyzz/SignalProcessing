@@ -1,3 +1,6 @@
+% This script reads part of a Metallica song with noise
+% and applies a band-stop filter to remove noise.
+
 clc
 clear all
 close all

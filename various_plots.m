@@ -1,3 +1,5 @@
+% Ploting various signals
+
 clc
 clear all
 close all

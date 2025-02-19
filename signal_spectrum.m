@@ -1,3 +1,6 @@
+% This script loads a signal and applies a low-pass filter to it.
+% The plot showcases the original and filtered signal spectrum.
+
 clc
 clear all
 close all
